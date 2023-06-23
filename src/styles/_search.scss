@@ -48,6 +48,10 @@
         display: flex;
         align-items: center;
         cursor: pointer;
+        display: none;
+        &_active{
+            display: flex;
+        }
         &:hover{
             opacity: 0.6;
         }

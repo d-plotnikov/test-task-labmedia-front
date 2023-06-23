@@ -6,9 +6,11 @@ function getOptions(word){
 }    
 
 function displayOptions(value) {
+    if(value!= ''){
+        searchResetBtn.classList.add('search__reset-button_active')
+    }
     userData = getOptions(value)
     rerenderApp(userData)
-    
 }
 
 searchInput.addEventListener('keyup', () => {
@@ -21,4 +23,6 @@ searchResetBtn.addEventListener('click', (event) =>{
     event.preventDefault()
     searchInput.value = ''
     displayOptions(searchInput.value)
+    rerenderApp(userData)
+    searchResetBtn.classList.remove('search__reset-button_active')
 })
