@@ -1,14 +1,19 @@
-const api = `https://5ebbb8e5f2cfeb001697d05c.mockapi.io/users`
+const api = `https://5ebbb8e5f2cfeb001697d05c.mockapi.io/users`;
 
-fetch(api)
-    .then(res => {
-        if (res.ok) {
-            return res.json()
-        } else {
-            alert('Что то пошло не так :(')
-        }
-    })
-    .then(data => {
-        userData = data
-        
-    })
+async function getusers() {
+
+    try {
+
+        let response = await fetch(api)
+        let arr = await response.json()
+        userData = await Object.assign([], arr)
+
+        rerenderApp(userData)
+        userSearch = userData
+
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+getusers()

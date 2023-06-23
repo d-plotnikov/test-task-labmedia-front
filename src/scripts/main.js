@@ -16,16 +16,5 @@ let searchInput = document.querySelector('.js-search-input'),
     countPage = 0,
     userList,
     userSearch
-
-setTimeout(() => {
-    userSearch = userData
-    rerenderApp(userData)
-}, 700)
-
-
-
-
-
-
-
-
+    
+    console.log(userData);
