@@ -1,4 +1,4 @@
-function renderUserList(data){
+function renderUserList(data) {
 
     userList = data.slice(keyUser, perPage)
     

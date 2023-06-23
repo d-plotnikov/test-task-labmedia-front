@@ -16,7 +16,7 @@ function deleteUser(data) {
 
         item.addEventListener('click', () =>{
             
-            if(idx == 1){
+            if (idx == 1) {
                 modal.classList.remove('modal_active')
             } else {
                 modal.classList.remove('modal_active')

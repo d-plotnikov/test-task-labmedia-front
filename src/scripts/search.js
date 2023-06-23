@@ -1,4 +1,4 @@
-function getOptions(word){
+function getOptions(word) {
     return userSearch.filter(u => {
         const regex = new RegExp(word, 'gi')
         return u.username.match(regex)
@@ -6,7 +6,7 @@ function getOptions(word){
 }    
 
 function displayOptions(value) {
-    if(value!= ''){
+    if (value!= '') {
         searchResetBtn.classList.add('search__reset-button_active')
     }
     userData = getOptions(value)

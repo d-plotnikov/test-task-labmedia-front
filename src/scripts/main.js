@@ -20,7 +20,7 @@ let searchInput = document.querySelector('.js-search-input'),
 setTimeout(() => {
     userSearch = userData
     rerenderApp(userData)
-}, 300)
+}, 700)
 
 
 

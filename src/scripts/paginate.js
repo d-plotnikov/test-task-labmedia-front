@@ -1,9 +1,9 @@
-function paginateRender(data){
+function paginateRender(data) {
 
     userList = data,
     countPage = Math.ceil(userList.length / 5)
 
-    function paginate(i){
+    function paginate(i) {
         let pageItem = pageCounter.cloneNode(true)
         pageItem.querySelector('.js-page-number').textContent = i
         return pageItem
@@ -15,22 +15,22 @@ function paginateRender(data){
     for (let i = 1; i < countPage + 1; i++) {
         fragment.appendChild(paginate(i))
     }
-
+ 
     pagination.appendChild(fragment)
 
     clickPagination()
 }
 
-function clickPagination(){
+function clickPagination() {
 
     pagination.addEventListener('click', (e) => {
         e.preventDefault()
         let index = e.target.innerHTML
         let stepPaginate = 5
 
-        if(e.target.classList.contains('js-page-number')){
+        if (e.target.classList.contains('js-page-number')) {
             
-            if(index== 1){
+            if (index== 1) {
                 keyUser = 0
                 perPage = 5
             } else {
