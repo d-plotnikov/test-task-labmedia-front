@@ -1,0 +1,28 @@
+.modal {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: $grey-3;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    &_active{
+        display: flex;
+    }
+    &__card-title{
+        padding-bottom: 24px;
+    }
+    &__card {
+        max-width: 353;
+        border-radius: 8px;
+        background: $white;
+        padding: 36px 36px 32px 36px;
+        &-buttons{
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
