@@ -17,28 +17,31 @@ function paginateRender(data) {
     }
  
     pagination.appendChild(fragment)
-
+    
     clickPagination()
 }
 
 function clickPagination() {
-
-    pagination.addEventListener('click', (e) => {
-        e.preventDefault()
-        let index = e.target.innerHTML
-        let stepPaginate = 5
-
-        if (e.target.classList.contains('js-page-number')) {
-            
-            if (index== 1) {
-                keyUser = 0
-                perPage = 5
-            } else {
-                perPage = index*stepPaginate
-                keyUser = (index-1)*stepPaginate
-            }
+    let paginationBtn = document.querySelectorAll('.js-page-number')
+    paginationBtn.forEach(element => {
+        element.addEventListener('click', (e) => {
+            e.preventDefault()
+            let index = e.target.innerHTML
+            let stepPaginate = 5
     
-            rerenderApp(userData)
-        }
-    })
+            if (e.target.classList.contains('js-page-number')) {
+                
+                if (index== 1) {
+                    keyUser = 0
+                    perPage = 5
+                } else {
+                    perPage = index*stepPaginate
+                    keyUser = (index-1)*stepPaginate
+                }
+        
+                rerenderApp(userData)
+            }
+        })
+    });
+    
 }
